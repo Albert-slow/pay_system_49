@@ -29,13 +29,13 @@ class UserCard(Base):
 
 class Transfer(Base):
     __tablename__ = "transfers"
-    trasfer_id = Column(Integer, primary_key=True, autoincrement=True)
+    transfer_id = Column(Integer, primary_key=True, autoincrement=True)
     card_from_id = Column(Integer, ForeignKey("cards.card_id"))
     card_to_id = Column(Integer, nullable=False)
     amount = Column(Float, nullable=False)
 
     status = Column(Boolean, default=True)
 
-    trasaction_date = Column(DateTime)
+    transaction_date = Column(DateTime)
 
     card_from_fk = relationship(UserCard, lazy="subquery")
